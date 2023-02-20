@@ -6,7 +6,14 @@
     <title>Tajcent Connection</title>
 </head>
 <body>
-    <div class="topBar"></div>
+    <div class="topBar">
+        <span>Tajcent Connection</span>
+        <div>
+            <span>--</span>
+            <span>=</span>
+            <span>X</span>
+        </div>
+    </div>
     <div id="root"></div>
     <script src="../build/js/app.js"></script>
 </body>
@@ -22,7 +29,18 @@
         height: 30px;
         top: 0;
         background: black;
+        color: white;
         -webkit-app-region: drag;
+        -webkit-user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    span {
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 </style>
 </html>
