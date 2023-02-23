@@ -5,7 +5,8 @@ const url = require("url");
 function createWindow() {
   const mainWindow = new BrowserWindow({
     title: "Tajcent Connection",
-    frame: false,
+    width: 800,
+    height: 600,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
