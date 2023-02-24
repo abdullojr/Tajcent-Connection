@@ -1,0 +1,29 @@
+.container {
+  padding: 15px 12px;
+
+  background: #2c303b;
+
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #3c87df;
+
+  cursor: pointer;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.48px;
+  line-height: 25px;
+
+  -webkit-user-select: none;
+
+  &:hover {
+    transition: 0.5s;
+    background: #3c3f47;
+    color: #3c88dfac;
+  }
+}

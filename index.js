@@ -7,6 +7,7 @@ function createWindow() {
     title: "Tajcent Connection",
     minWidth: 800,
     minHeight: 600,
+    frame: false,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,

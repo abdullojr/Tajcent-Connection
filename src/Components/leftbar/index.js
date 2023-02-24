@@ -9,7 +9,15 @@ const Leftbar = () => {
   return (
     <div className="container">
       {Nav.map((nav, i) => (
-        <NavLink key={i} to={nav.path} className="link">
+        <NavLink
+          style={{
+            color: nav.active ? "white" : "rgba(133, 133, 133, 0.1)",
+            cursor: nav.active ? "pointer" : "default",
+          }}
+          key={i}
+          to={nav.active && nav.path}
+          className="link"
+        >
           {({ isActive }) => (
             <Icon name={isActive ? nav.iconActive : nav.icon} />
           )}

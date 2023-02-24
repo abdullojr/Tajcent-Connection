@@ -1,37 +1,51 @@
 import React from "react";
-import { RouterProvider, createHashRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createHashRouter,
+  createBrowserRouter,
+} from "react-router-dom";
 import App from "../App";
+import ProfilePage from "../Page/Profile";
+import MainPage from "../Page/Main";
+import StorePage from "../Page/store";
+import EducationPage from "../Page/education";
+import ChatPage from "../Page/Chats";
+import Login from "../Page/Login";
+import Auth from "../Page/Login/Auth";
 
 const Router = () => {
   const routes = createHashRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/auth",
+      element: <Auth />,
+    },
     {
       path: "/",
       element: <App />,
       children: [
         {
           path: "/",
-          element: (
-            <>
-              <h1>every ok</h1>
-              <h1>every ok</h1>
-            </>
-          ),
+          element: <ProfilePage />,
         },
         {
           path: "/main",
-          element: <h1>Main</h1>,
+          element: <MainPage />,
         },
         {
           path: "/store",
-          element: <h1>Store</h1>,
+          element: <StorePage />,
         },
         {
           path: "/education",
-          element: <h1>Education</h1>,
+          element: <EducationPage />,
         },
         {
           path: "/chats",
-          element: <h1>Chats</h1>,
+          element: <ChatPage />,
         },
       ],
     },
