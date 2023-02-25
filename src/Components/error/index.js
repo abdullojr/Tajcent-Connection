@@ -10,12 +10,17 @@ const Error = ({ label }) => {
           right: "20px",
           background: "#F4CDCD",
           color: "#EE1F1F",
-          fontSize: "8px",
           padding: "10px 12px",
           borderRadius: "14px",
         }}
       >
-        <h1>{label}</h1>
+        <h1
+          style={{
+            fontSize: "14px",
+          }}
+        >
+          {label}
+        </h1>
       </div>
     )
   );

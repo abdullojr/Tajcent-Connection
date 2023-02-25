@@ -7,12 +7,14 @@ function createWindow() {
     title: "Tajcent Connection",
     minWidth: 800,
     minHeight: 600,
-    frame: false,
+    // frame: false,
     autoHideMenuBar: true,
+    // fullscreen: true,
     webPreferences: {
       nodeIntegration: true,
     },
   });
+
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "public/index.html"),
@@ -20,5 +22,11 @@ function createWindow() {
       slashes: true,
     })
   );
+
+  const MenuTemplate = Menu.buildFromTemplate(menu);
+  Menu.setApplicationMenu(MenuTemplate);
 }
+
+const menu = [];
+
 app.whenReady().then(() => createWindow());
