@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import Icon from "../icons/index";
 
-const Input = ({ type, placeholder, onChange, value }) => {
+const Input = ({ type, placeholder, onChange, value, showIcon = true }) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -16,9 +16,11 @@ const Input = ({ type, placeholder, onChange, value }) => {
             value={value}
             className={styles.input}
           />
-          <span>
-            <Icon name={"homeActive"} />
-          </span>
+          {showIcon && (
+            <span>
+              <Icon name={"homeActive"} />
+            </span>
+          )}
         </>
       ) : (
         <>

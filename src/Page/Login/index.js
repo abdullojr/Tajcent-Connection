@@ -5,6 +5,7 @@ import Error from "../../Components/error";
 import baseUrl from "../../utils";
 import apiPaths from "../../api/apiPaths";
 import Loader from "../../Components/loader";
+import image from "../../assets/des.jpg";
 
 const Login = () => {
   const [error, setError] = React.useState("");
@@ -19,14 +20,17 @@ const Login = () => {
             window.location.hash = "/auth";
           } else {
             setLoading(false);
-            setError("Проверьте интернет подключения!");
             setTimeout(() => {
               setError("");
             }, 5000);
           }
         })
         .catch(function (err) {
+          setError("Проверьте интернет подключения!");
           setLoading(false);
+          setTimeout(() => {
+            setError("");
+          }, 5000);
         });
     } else {
       setError("Нет подключения к Интернету!");
@@ -37,7 +41,12 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        backgroundImage: `url(${image})`,
+      }}
+    >
       <h1
         style={{
           fontSize: "25px",

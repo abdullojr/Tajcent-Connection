@@ -5,11 +5,17 @@ import Button from "../../../Components/button";
 import Icon from "../../../Components/icons";
 import Loader from "../../../Components/loader";
 import { NavLink } from "react-router-dom";
+import image from "../../../assets/des1.jpg";
 
 const Auth = () => {
   const [loading, setLoading] = useState(false);
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        backgroundImage: `url(${image})`,
+      }}
+    >
       <div
         style={{
           width: "100%",

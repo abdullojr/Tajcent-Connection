@@ -1,27 +1,23 @@
-const { app, Menu, BrowserWindow, Notification } = require("electron");
+const { app, Menu, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const url = require("url");
 
+let mainWindow;
+
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     title: "Tajcent Connection",
     minWidth: 800,
     minHeight: 600,
-    // frame: false,
+    frame: false,
     autoHideMenuBar: true,
-    // fullscreen: true,
+
     webPreferences: {
-      nodeIntegration: true,
+      preload: path.join(__dirname, "./preload.js"),
     },
   });
 
-  mainWindow.loadURL(
-    url.format({
-      pathname: path.join(__dirname, "public/index.html"),
-      protocol: "file:",
-      slashes: true,
-    })
-  );
+  mainWindow.loadFile(path.join(__dirname, "public/index.html"));
 
   const MenuTemplate = Menu.buildFromTemplate(menu);
   Menu.setApplicationMenu(MenuTemplate);
@@ -29,4 +25,17 @@ function createWindow() {
 
 const menu = [];
 
-app.whenReady().then(() => createWindow());
+app.whenReady().then(() => {
+  ipcMain.on("minimize", () => {
+    mainWindow.minimize();
+  });
+
+  ipcMain.on("maximize", () => {
+    mainWindow.maximize();
+  });
+
+  ipcMain.on("close", () => {
+    mainWindow.close();
+  });
+  createWindow();
+});

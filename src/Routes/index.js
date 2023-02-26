@@ -12,6 +12,7 @@ import EducationPage from "../Page/education";
 import ChatPage from "../Page/Chats";
 import Login from "../Page/Login";
 import Auth from "../Page/Login/Auth";
+import Register from "../Page/Login/Register";
 
 const Router = () => {
   const routes = createHashRouter([
@@ -22,6 +23,10 @@ const Router = () => {
     {
       path: "/auth",
       element: <Auth />,
+    },
+    {
+      path: "/signUp",
+      element: <Register />,
     },
     {
       path: "/",

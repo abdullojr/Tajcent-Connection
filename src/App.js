@@ -1,6 +1,7 @@
 import React from "react";
 import AppLayout from "./Layout/AppLayout";
 import Leftbar from "./Components/leftbar";
+import Stepper from "./Components/Stepper";
 
 function App() {
   return (
